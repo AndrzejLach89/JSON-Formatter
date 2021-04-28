@@ -33,6 +33,8 @@ namespace JsonFormatter
             var output = new StringBuilder();
             foreach (char i in input)
             {
+                if (!inside && i.Equals('\n'))
+                    return input;
                 if (letter == 0 && i.Equals('{'))
                 {
                     output.Append(i);
@@ -141,6 +143,8 @@ namespace JsonFormatter
             var output = new StringBuilder();
             foreach (char i in input)
             {
+                if (!inside && i.Equals('\n'))
+                    return input;
                 if (letter == 0 && i.Equals('{'))
                 {
                     output.Append(i);
